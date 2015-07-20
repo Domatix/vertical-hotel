@@ -26,37 +26,39 @@
 		<!--  Food Item Category -->
 			
 		<record id="hotel_menucard_type_0" model="hotel.menucard.type">
-			<field name="parent_id"  ref="null" />
+			<!-- <field name="parent_id"  ref="null" />  -->
 			<field name="name">All FoodItems</field>
-
 		</record>
+		
 		<record id="hotel_menucard_type_1" model="hotel.menucard.type">
-			<field name="parent_id" model="product.category" search="[('ismenutype','=',True)]" ref="hotel_menucard_type_0"/>
+			<!-- <field name="parent_id" model="product.category" search="[('ismenutype','=',True)]" ref="hotel_menucard_type_0"/>  -->
+			<field name="parent_id" ref="hotel_menucard_type_0"/>
 			<field name="name">Punjabi</field>
 		</record>
 		<record id="hotel_menucard_type_2" model="hotel.menucard.type">
-			<field name="parent_id" model="product.category" search="[('ismenutype','=',True)]" ref="hotel_menucard_type_0"/>
+			<field name="parent_id" ref="hotel_menucard_type_0"/>
 			<field name="name">South Indian</field>
 		</record>
 		<record id="hotel_menucard_type_3" model="hotel.menucard.type">
-			<field name="parent_id" model="product.category" search="[('ismenutype','=',True)]" ref="hotel_menucard_type_0"/>
+			<field name="parent_id" ref="hotel_menucard_type_0"/>
 			<field name="name">Gujarati</field>
 		</record>
 		
 		<!-- Food Item List -->
 		<record id="hotel_fooditem_0" model="hotel.menucard">
 			<field name="name">Paneer Tikaa</field>
-			<field name="categ_id" model="product.category" search="[('ismenutype','=',True),('name','=','Punjabi')]" ref="hotel_menucard_type_1"/> 
+			<!-- <field name="categ_id" model="product.category" search="[('ismenutype','=',True),('name','=','Punjabi')]" ref="hotel_menucard_type_1"/>  --> 
+			<field name="categ_id" ref="hotel_menucard_type_1"/>
 			<field name="list_price">50.00</field>
 		</record>
 		<record id="hotel_fooditem_1" model="hotel.menucard">
 			<field name="name">Tanduri Roti</field>
-			<field name="categ_id" model="product.category" search="[('ismenutype','=',True),('name','=','Punjabi')]" ref="hotel_menucard_type_1"/> 
+			<field name="categ_id" ref="hotel_menucard_type_1"/> 
 			<field name="list_price">10</field>
 		</record>
 		<record id="hotel_fooditem_2" model="hotel.menucard">
 			<field name="name">Dosa</field>
-			<field name="categ_id" model="product.category" search="[('ismenutype','=',True),('name','=','South Indian')]" ref="hotel_menucard_type_2"/> 
+			<field name="categ_id" ref="hotel_menucard_type_2"/> 
 			<field name="list_price">30.00</field>
 		</record>
 	
