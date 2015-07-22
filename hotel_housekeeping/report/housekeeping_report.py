@@ -1,12 +1,11 @@
 # -*- encoding: utf-8 -*-
 
-from openerp import api
+from openerp import api,models
 import time
-from openerp.report import report_sxw
 
-class activity_report(report_sxw.rml_parse):
+class activity_report(models.Model):
     
-    def __init__(self, name):
+    '''def __init__(self, name):
         super(activity_report, self).__init__(name)
         
         self.localcontext.update( {
@@ -14,7 +13,7 @@ class activity_report(report_sxw.rml_parse):
             'get_activity_detail': self.get_activity_detail,
             'get_room_no': self.get_room_no,
             
-        })
+        })'''
                 
     
     @api.model
@@ -33,6 +32,7 @@ class activity_report(report_sxw.rml_parse):
                         )
                      
         res=self._cr.dictfetchall()
+        print res
         return res
    
     
@@ -40,8 +40,4 @@ class activity_report(report_sxw.rml_parse):
     def get_room_no(self, room_no):
         return self.env['hotel.room'].browse(self._cr, self._uid, room_no).name
     
-report_sxw.report_sxw('report.activity.detail', 
-                      'hotel.housekeeping', 
-                      'addons/hotel_housekeeping/report/activity_detail.rml',
-                      parser= activity_report)
  
