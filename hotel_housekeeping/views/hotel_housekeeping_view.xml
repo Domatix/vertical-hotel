@@ -42,7 +42,7 @@
                         colspan="4" nolabel="1">
                             <form string="Activity Lines">
                                 <group colspan="4" col="4">
-                                    <field name="room_id" />
+                                   <!--  <field name="room_id" />  -->
                                     <field name="activity_name" />
                                     <field name="housekeeper" />
                                     <field name="clean_start_time" />

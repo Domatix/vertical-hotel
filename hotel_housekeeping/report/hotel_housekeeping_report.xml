@@ -1,13 +1,52 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <openerp>
-	<data>
-		<report id="housekeeping_activity_detail"
-			string="Activity Detail"
-			model="hotel.housekeeping"
-			name="activity.detail"
-			rml="hotel_housekeeping/report/activity_detail.rml"
-			auto="False"
-			menu="False"/>       
-	</data>
+<data>
+	
+<template id="housekeeping_report">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+        	<div class="row">
+                    <div class="col-xs-12 text-center">
+                    	<span style="font-weight:bold;font-size:25pt;" t-field="FROM DATE"/><br />
+                        <span style="font-weight:bold;font-size:25pt;" t-field="TO DATE"/><br />
+                       	<span style="font-size:14pt;" t-field="ROOM" />
+                    </div>
+            </div>
+            <div class="page">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="font-size:16pt;">Date</th>
+                            <th style="font-size:16pt;" class="text-right">Activities</th>
+                            <th style="font-size:16pt;" class="text-right">Housekeeper Name</th>
+                            <th style="font-size:16pt;" class="text-right">Clean Start Time</th>
+                            <th style="font-size:16pt;" class="text-right">Clean End Time</th>
+                            <th style="font-size:16pt;" class="text-right">Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <!--  <tr style="border-bottom: 2px solid #C9C9C9;" t-foreach="o.lines" t-as="line">
+                            <td style="width:55%;"><span style="font-size:14pt;" t-field="line.product_id"/></td>
+                            <td style="width:22.5%;" class="text-right"><span style="font-size:14pt;" t-esc="'%.f' % line.qty"/></td>
+                            <td style="width:32.5%;" class="text-right"><span style="font-size:14pt;" t-field="line.price_subtotal"/></td>
+                        </tr> 
+                         -->
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</template>
+
+<template id="housekeeping_doc">
+	<xpath expr="t[@t-call='report.html_container']" position="replace">
+	    <t t-call="report.html_container">
+	        <t t-foreach="doc_ids" t-as="doc_id">
+	            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'hotel_housekeeping.housekeeping_report')"/>	            
+	        </t>
+	    </t>
+    </xpath> 
+</template>
+
+</data>
 </openerp>
-			
