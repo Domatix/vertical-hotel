@@ -62,8 +62,6 @@
                                 <field name="housekeeper" />
                                 <field name="clean_start_time" />
                                 <field name="clean_end_time" />
-                                <field name="dirty" />
-                                <field name="clean" />
                             </tree>
                         </field>
                         <newline />
@@ -76,11 +74,9 @@
             <field name="model">hotel.housekeeping</field>
             <field name="arch" type="xml">
                 <tree string="Housekeeping12">
+                	<field name="room_no" />
+                	<field name="clean_type" />
                     <field name="current_date" />
-                    <field name="clean_type" />
-                    <field name="room_no" />
-                    <field name="inspector" />
-                    <field name="inspect_date_time" />
                     <field name="state" />
                 </tree>
             </field>
