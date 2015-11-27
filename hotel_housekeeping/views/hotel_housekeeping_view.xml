@@ -9,7 +9,6 @@
             <field name="arch" type="xml">
                 <form string="Housekeeping" >
                     <header>
-
                         <field name="state" widget="statusbar" />
                     </header>
                     <sheet>
@@ -127,9 +126,9 @@
         </record>
         <menuitem id="menu_hotel_activity" name="Activity"
         parent="hotel.hotel_configuration_menu" sequence="2" />
-        <menuitem name="Activity Types"
+       <!--  <menuitem name="Activity Types"
         id="menu_action_hotel_housekeeping_activity_type_view_form" action="action_hotel_housekeeping_activity_type_view_form"
-        parent="menu_hotel_activity" sequence="12" />
+        parent="menu_hotel_activity" sequence="12" />  -->
 
         <!-- activity -->
         <record model="ir.ui.view" id="view_h_activity_form">

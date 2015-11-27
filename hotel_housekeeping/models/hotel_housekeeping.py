@@ -28,7 +28,9 @@ class hotel_housekeeping_activity_type(models.Model):
 class product_product(models.Model):
     _inherit = "product.product"
     
-    isact = fields.Boolean(string='Is Activity')
+    isact = fields.Boolean(
+        string='Is Activity'
+    )
 
 
 class hotel_activity(models.Model):

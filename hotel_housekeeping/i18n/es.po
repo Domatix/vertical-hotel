@@ -204,7 +204,7 @@ msgstr "Tipo de limpieza"
 #. module: hotel_housekeeping
 #: model:ir.module.module,shortdesc:hotel_housekeeping.module_meta_information
 msgid "Hotel Housekeeping"
-msgstr ""
+msgstr "Servicio de limpieza"
 
 #. module: hotel_housekeeping
 #: wizard_field:hotel.housekeeping.activity_list,init,date_end:0
@@ -358,3 +358,13 @@ msgstr "Detalle de actividades"
 
 #~ msgid "Hotel Housekeeping Management"
 #~ msgstr "Gestión de la limpieza del hotel"
+
+#. module: hotel_housekeeping
+#: model:ir.ui.menu,name:hotel_housekeeping.menu_housekeeping
+msgid "Housekeeping Services"
+msgstr "Servicio de limpieza"
+
+#. module: hotel_housekeeping
+#: model:ir.ui.menu,name:hotel_housekeeping.menu_hotel_activity
+msgid "Activity"
+msgstr "Limpieza"
