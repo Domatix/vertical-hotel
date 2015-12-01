@@ -9,15 +9,12 @@
     "category" : "Generic Modules/Hotel Housekeeping",
     "depends" : ["hotel"],
     "init_xml" : [],
-    "demo_xml" : ["hotel_housekeeping_data.xml",
-    ],
+    "demo_xml" : [],
     "update_xml" : [
-                    #"data/hotel_housekeeping_data.xml",
+                    "security/ir.model.access.csv",
                     "views/hotel_housekeeping_view.xml",
                     "data/hotel_housekeeping_workflow.xml",
-                    "report/hotel_housekeeping_report.xml",
-                    "wizard/hotel_housekeeping_wizard.xml",
-                    "security/ir.model.access.csv"
+                    #"wizard/hotel_housekeeping_wizard.xml"
     ],
     "active": False,
     'installable': True
